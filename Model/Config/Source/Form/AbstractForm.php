@@ -16,7 +16,7 @@ class AbstractForm implements ArrayInterface
 {
     /**
      * FormConfig instance
-     *		
+     *      
      * @var \Faonni\ReCaptcha\Model\Form\FormConfig
      */
     protected $_config;
@@ -30,13 +30,13 @@ class AbstractForm implements ArrayInterface
     
     /**
      * Initialize source
-     * 	
+     *  
      * @param AbstractFormConfig $config
      */
     public function __construct(
-        AbstractFormConfig $config
+        AbstractFormConfig $config    
     ) {
-        $this->_config = $config;
+        $this->_config = $config;     
     }
     
     /**
@@ -49,6 +49,7 @@ class AbstractForm implements ArrayInterface
         if ($this->_options === null) {
             $this->_options = [];
             foreach ($this->_config->getAvailableForms() as $name) {
+
                 $this->_options[] = [
                     'label' => $this->_config->getFormLabel($name),
                     'value' => $name,
